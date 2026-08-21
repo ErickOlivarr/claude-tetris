@@ -55,6 +55,10 @@ jobs:
                - Si no existe, créalo con
                  `gh issue comment ${{ github.event.issue.number }} --repo ${{ github.repository }} --body-file -`
                  (o `--body`).
+               - El comentario debe estar escrito en formato Markdown válido y bien
+                 formateado, del tipo que GitHub renderiza correctamente en issues
+                 (encabezados en negrita con `**`, listas con `-`, código entre
+                 backticks, etc.) — no texto plano ni Markdown roto.
                - El comentario SIEMPRE debe empezar con la línea `<!-- claude-triage -->`
                  (marcador HTML invisible) y tener esta estructura:
 
