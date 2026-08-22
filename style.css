@@ -173,13 +173,33 @@ body {
 }
 
 .theme-toggle-track {
-  width: 42px;
+  width: 52px;
   height: 22px;
   background: var(--toggle-track-bg);
   border: 1px solid var(--toggle-track-border);
   border-radius: 999px;
   position: relative;
   transition: background 0.2s, border-color 0.2s;
+}
+
+.theme-toggle-track::after {
+  content: "light";
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--label-color);
+  pointer-events: none;
+}
+
+:root[data-theme="light"] .theme-toggle-track::after {
+  content: "dark";
+  right: auto;
+  left: 4px;
 }
 
 .theme-toggle-thumb {
@@ -194,7 +214,7 @@ body {
 }
 
 .theme-toggle input:checked ~ .theme-toggle-track .theme-toggle-thumb {
-  transform: translateX(20px);
+  transform: translateX(30px);
 }
 
 .theme-toggle input:focus-visible ~ .theme-toggle-track {
