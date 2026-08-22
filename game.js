@@ -657,6 +657,7 @@ bestComboEver = loadStat(BEST_COMBO_KEY);
 bestClearEver = loadStat(BEST_CLEAR_KEY);
 updateStatsHUD();
 renderAllHighscores(null);
+console.log('Hola mundo');
 init();
 
 /* ---- Menú de pausa completo ---- */
