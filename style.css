@@ -98,12 +98,49 @@ body {
 
 .game-title {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 800;
-  letter-spacing: 8px;
+  letter-spacing: 10px;
   text-align: center;
-  color: var(--title-color);
-  text-shadow: 0 0 20px var(--title-glow);
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    #ff5e5e,
+    #ffb84d,
+    #ffe14d,
+    #7aff8c,
+    #4dd9ff,
+    #7a8cff,
+    #d24dff,
+    #ff5e5e
+  );
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: title-hue-shift 6s linear infinite, title-pulse 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px var(--title-glow));
+}
+
+@keyframes title-hue-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+@keyframes title-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-title {
+    animation: none;
+    color: var(--title-color);
+    background: none;
+    -webkit-text-fill-color: initial;
+    text-shadow: 0 0 20px var(--title-glow);
+  }
 }
 
 .game-container {
