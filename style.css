@@ -264,3 +264,31 @@ kbd {
 #restart-btn:hover {
   background: var(--restart-hover);
 }
+
+/* ---- Selector de skin visual ---- */
+.skin-select {
+  gap: 6px;
+}
+
+#skin-switch {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--kbd-bg);
+  border: 1px solid var(--kbd-border);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+#skin-switch:hover {
+  border-color: var(--value-color);
+}
+
+#skin-switch:focus-visible {
+  outline: 2px solid var(--value-color);
+  outline-offset: 2px;
+}
